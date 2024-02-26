@@ -13,7 +13,6 @@ import atexit
 # â 0226
 # ã 0227
 # ú 163
-YOU ARE SMELLY
 FILE_LIST = [['VERBS', 'Verbs.csv'], ['VOCAB', 'Vocab.csv'],['ANSWERS','ANSWERS.csv']]
 QUESTIONS_DATA_LIST = {'VOCAB': ['vocab', 'vorbs', 'vorbs_all'],
                        'VERBS': ['verbs', 'vorbs', 'verbs_all', 'past', 'present', 'future', 'vorbs_all']
