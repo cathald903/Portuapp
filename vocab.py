@@ -130,7 +130,7 @@ def prune_correct_answers(base_questions):
     array = []
     for entry in base_questions:
         if any(entry['Root'] in k for k in ANSWERS):
-            spread = 0 | entry['Correct'] - entry['Incorrect']
+            spread = max(0,entry['Correct'] - entry['Incorrect'])
             spread = min(5,spread)
             if not random.randint(0, spread):
                 array.append(entry)
@@ -142,13 +142,10 @@ def prune_correct_answers(base_questions):
     else:
         return prune_correct_answers(base_questions)
      
-debug_x = []
 ##########################################################################
 ####    Functions used to derive the question from the given data row ####
 ##########################################################################
 def update_answer(kind: str,root:str,correct:bool):
-    global debug_x
-    debug_x = [kind,root,correct] 
     reason = kind if not correct else 'Correct'
     not_present = True
     for entry in ANSWERS:    
@@ -157,9 +154,8 @@ def update_answer(kind: str,root:str,correct:bool):
             entry['Incorrect']+= not correct
             entry['Reason'].add(reason)
             not_present = False
-            continue
     if not_present:
-        ANSWERS.append({'Word':root,'Correct':0 | correct,'Incorrect':0 | (not correct),'Reason':set([reason])})
+        ANSWERS.append({'Word':root,'Correct':int(correct),'Incorrect':int(not correct),'Reason':set([reason])})
 
 def get_answer(question: str) -> str:
     print(question)
@@ -175,7 +171,7 @@ def check_answer(question: str, answer: str, kind: str,root:str) -> None:
     else:
         print(f"{kind}: '{user_answer}' is wrong. \nCorrect {kind}: {answer}")
     
-    if not kind == 'Definitive Article':
+    if kind != 'Definitive Article':
         update_answer(kind, root,correct)
 
 
@@ -237,8 +233,7 @@ def get_word_ending(q:dict)->str:
         return 'Masculine'
     if f:
         return 'Feminine'
-    else:
-        ''
+    return ''
 
 def compose_word(q:dict)->dict:
     ending = get_word_ending(q)
@@ -260,7 +255,7 @@ def get_question(array: list, index: int, question_area: str) -> None:
     if q['q_type'] == 'VERBS' and question_area not in ['verbs', 'vorbs']:
         get_question_verb(q, question_area)
     elif q['q_type'] == 'VOCAB':
-        if q['Article'] and  random.randint(0,4):
+        if q['Article'] and  not random.randint(0,4):
             check_answer('What is the definitive article of the word?',
                      q['Article'], 'Definitive Article',q['Root'])
 

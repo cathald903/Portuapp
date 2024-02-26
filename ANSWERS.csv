@@ -12,7 +12,7 @@ to eat | comer,1,1,"{'Correct', 'Translation'}"
 to go for walks | passear,3,0,{'Correct'}
 to cook | cozinhar,1,1,"{'Correct', 'Translation'}"
 to taste/try | provar,0,1,{'Translation'}
-to travel | viajar,2,2,"{'Correct', 'Translation'}"
+to travel | viajar,3,2,"{'Correct', 'Translation'}"
 to surf the net | navegar,1,0,{'Correct'}
 to lose | perder,1,0,{'Correct'}
 to drink | beber,2,0,{'Correct'}
@@ -49,10 +49,10 @@ sleepy | sono,0,2,{'Translation'}
 to bring | trazer,0,1,{'Translation'}
 to work | trabalhar,1,0,{'Correct'}
 to have drink/food | tomar,0,1,{'Translation'}
-to play | tocar,1,1,"{'Correct', 'Translation'}"
+to play | tocar,3,1,"{'Correct', 'Translation'}"
 to play | jogar,1,0,{'Correct'}
 to sing | cantar,1,0,{'Correct'}
-to be | estar,1,0,{'Correct'}
+to be | estar,3,0,{'Correct'}
 to know | conhecer,1,1,"{'Correct', 'Translation'}"
 snack | lanche,0,1,{'Translation'}
 farmer | agricultor,1,0,{'Correct'}
