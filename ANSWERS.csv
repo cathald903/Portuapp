@@ -1,0 +1,67 @@
+Word,Correct,Incorrect,Reason
+to speak | falar,1,0,{'Correct'}
+to draw | desenhar,1,2,"{'Correct', 'Translation'}"
+to choose | escolher,0,1,{'Translation'}
+to dance | dançar,1,0,{'Correct'}
+to read | ler,1,1,{'Translation'}
+to say/tell | dizer,1,0,{'Correct'}
+to speak | falar,1,0,{'Correct'}
+to be | ser,3,0,{'Correct'}
+to lose | perder,2,0,{'Correct'}
+to eat | comer,1,1,"{'Correct', 'Translation'}"
+to go for walks | passear,3,0,{'Correct'}
+to cook | cozinhar,1,1,"{'Correct', 'Translation'}"
+to taste/try | provar,0,1,{'Translation'}
+to travel | viajar,2,2,"{'Correct', 'Translation'}"
+to surf the net | navegar,1,0,{'Correct'}
+to lose | perder,1,0,{'Correct'}
+to drink | beber,2,0,{'Correct'}
+to see | ver,2,0,{'Correct'}
+to close | fechar,0,2,{'Translation'}
+light meal | refeição ligeira,0,3,"{'Translation', 'Definitive Article'}"
+magazine | revista,1,1,"{'Correct', 'Translation'}"
+mother | mãe,1,1,"{'Correct', 'Translation'}"
+to participate | participar,1,0,{'Correct'}
+to close | fechar,0,1,{'Translation'}
+apartment | apartamento,2,0,{'Correct'}
+fruit | fruta,3,0,{'Correct'}
+cyclones | ciclones,1,0,{'Correct'}
+grandchildren | netos,1,1,"{'Correct', 'Translation'}"
+thirsty | sede,0,1,{'Translation'}
+siblings | irmãos,1,0,{'Correct'}
+music | música,1,0,{'Correct'}
+today | hoje,1,0,{'Correct'}
+police officer | policial,0,1,{'Translation'}
+thunder | trovão,0,1,{'Translation'}
+daughter | filha,0,1,{'Translation'}
+journalist | journalist,1,1,"{'Correct', 'Translation'}"
+warm/hot | calor,1,1,"{'Correct', 'Translation'}"
+married | casad,0,2,{'Translation'}
+windy | vento,0,1,{'Translation'}
+grandparents | avós,1,0,{'Correct'}
+happy/content | feliz,0,1,{'Translation'}
+this | isto,0,2,{'Translation'}
+brother | irmão,0,1,{'Translation'}
+waiter | empregad,0,1,{'Translation'}
+fog | nevoeiro,0,1,{'Translation'}
+sweet | sobremesa,0,2,{'Translation'}
+sleepy | sono,0,2,{'Translation'}
+to bring | trazer,0,1,{'Translation'}
+to work | trabalhar,1,0,{'Correct'}
+to have drink/food | tomar,0,1,{'Translation'}
+to play | tocar,1,1,"{'Correct', 'Translation'}"
+to play | jogar,1,0,{'Correct'}
+to sing | cantar,1,0,{'Correct'}
+to be | estar,1,0,{'Correct'}
+to know | conhecer,1,1,"{'Correct', 'Translation'}"
+snack | lanche,0,1,{'Translation'}
+farmer | agricultor,1,0,{'Correct'}
+parents | pais,0,1,{'Translation'}
+husband | marido/esposo,0,1,{'Translation'}
+bored | aborrecid,0,1,{'Translation'}
+grandfather | avô,0,1,{'Translation'}
+raining | chove,0,1,{'Translation'}
+clouds | novens,0,1,{'Translation'}
+plumber | canalizador,0,1,{'Translation'}
+drinks | bebidas,1,0,{'Correct'}
+grandmother | avó,1,0,{'Correct'}
