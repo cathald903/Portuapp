@@ -1,6 +1,6 @@
 Word,Correct,Incorrect,Reason
 to speak | falar,1,0,{'Correct'}
-to draw | desenhar,1,2,"{'Correct', 'Translation'}"
+to draw | desenhar,1,2,"{'Translation', 'Correct'}"
 to choose | escolher,0,1,{'Translation'}
 to dance | dançar,1,0,{'Correct'}
 to read | ler,1,1,{'Translation'}
@@ -8,60 +8,68 @@ to say/tell | dizer,1,0,{'Correct'}
 to speak | falar,1,0,{'Correct'}
 to be | ser,3,0,{'Correct'}
 to lose | perder,2,0,{'Correct'}
-to eat | comer,1,1,"{'Correct', 'Translation'}"
+to eat | comer,1,1,"{'Translation', 'Correct'}"
 to go for walks | passear,3,0,{'Correct'}
-to cook | cozinhar,1,1,"{'Correct', 'Translation'}"
+to cook | cozinhar,1,1,"{'Translation', 'Correct'}"
 to taste/try | provar,0,1,{'Translation'}
-to travel | viajar,3,2,"{'Correct', 'Translation'}"
+to travel | viajar,3,2,"{'Translation', 'Correct'}"
 to surf the net | navegar,1,0,{'Correct'}
 to lose | perder,1,0,{'Correct'}
 to drink | beber,2,0,{'Correct'}
 to see | ver,2,0,{'Correct'}
-to close | fechar,0,2,{'Translation'}
-light meal | refeição ligeira,0,3,"{'Translation', 'Definitive Article'}"
-magazine | revista,1,1,"{'Correct', 'Translation'}"
-mother | mãe,1,1,"{'Correct', 'Translation'}"
+to close | fechar,0,3,{'Translation'}
+light meal | refeição ligeira,1,3,"{'Translation', 'Definitive Article', 'Correct'}"
+magazine | revista,1,1,"{'Translation', 'Correct'}"
+mother | mãe,1,1,"{'Translation', 'Correct'}"
 to participate | participar,1,0,{'Correct'}
-to close | fechar,0,1,{'Translation'}
+to close | fechar,0,2,{'Translation'}
 apartment | apartamento,2,0,{'Correct'}
 fruit | fruta,3,0,{'Correct'}
-cyclones | ciclones,1,0,{'Correct'}
-grandchildren | netos,1,1,"{'Correct', 'Translation'}"
+cyclones | ciclones,1,1,"{'Translation', 'Correct'}"
+grandchildren | netos,1,1,"{'Translation', 'Correct'}"
 thirsty | sede,0,1,{'Translation'}
 siblings | irmãos,1,0,{'Correct'}
 music | música,1,0,{'Correct'}
 today | hoje,1,0,{'Correct'}
-police officer | policial,0,1,{'Translation'}
+police officer | policial,0,2,{'Translation'}
 thunder | trovão,0,1,{'Translation'}
 daughter | filha,0,1,{'Translation'}
-journalist | journalist,1,1,"{'Correct', 'Translation'}"
-warm/hot | calor,1,1,"{'Correct', 'Translation'}"
-married | casad,0,2,{'Translation'}
+journalist | journalist,1,2,"{'Translation', 'Correct'}"
+warm/hot | calor,1,1,"{'Translation', 'Correct'}"
+married | casad,0,3,{'Translation'}
 windy | vento,0,1,{'Translation'}
 grandparents | avós,1,0,{'Correct'}
 happy/content | feliz,0,1,{'Translation'}
 this | isto,0,2,{'Translation'}
 brother | irmão,0,1,{'Translation'}
-waiter | empregad,0,1,{'Translation'}
+waiter | empregad,0,2,{'Translation'}
 fog | nevoeiro,0,1,{'Translation'}
 sweet | sobremesa,0,2,{'Translation'}
-sleepy | sono,0,2,{'Translation'}
+sleepy | sono,0,3,{'Translation'}
 to bring | trazer,0,1,{'Translation'}
-to work | trabalhar,1,0,{'Correct'}
+to work | trabalhar,1,1,"{'Translation', 'Correct'}"
 to have drink/food | tomar,0,1,{'Translation'}
-to play | tocar,3,1,"{'Correct', 'Translation'}"
+to play | tocar,3,1,"{'Translation', 'Correct'}"
 to play | jogar,1,0,{'Correct'}
 to sing | cantar,1,0,{'Correct'}
 to be | estar,3,0,{'Correct'}
-to know | conhecer,1,1,"{'Correct', 'Translation'}"
+to know | conhecer,1,1,"{'Translation', 'Correct'}"
 snack | lanche,0,1,{'Translation'}
 farmer | agricultor,1,0,{'Correct'}
 parents | pais,0,1,{'Translation'}
-husband | marido/esposo,0,1,{'Translation'}
+husband | marido/esposo,1,1,"{'Translation', 'Correct'}"
 bored | aborrecid,0,1,{'Translation'}
 grandfather | avô,0,1,{'Translation'}
-raining | chove,0,1,{'Translation'}
+raining | chove,0,2,{'Translation'}
 clouds | novens,0,1,{'Translation'}
 plumber | canalizador,0,1,{'Translation'}
 drinks | bebidas,1,0,{'Correct'}
 grandmother | avó,1,0,{'Correct'}
+to do/make | fazer,0,1,{'Translation'}
+lightning | relâmpagos,0,1,{'Translation'}
+plastic | plástico,1,0,{'Correct'}
+aunt | tia,1,0,{'Correct'}
+builder | construtor,0,1,{'Translation'}
+granddaughter | neta,1,0,{'Correct'}
+uncle | tio,1,0,{'Correct'}
+unwell | mal,1,0,{'Correct'}
