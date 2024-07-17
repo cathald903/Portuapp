@@ -1,0 +1,178 @@
+id,user_id,word_id,date,question,given_answer,correct,context,context_correct
+Cathal_2024-07-02T10:35:16_siblings_irmãos,1,siblings_irmãos,2024-07-02T10:35:16,What is the Portuguese of Siblings?,imâos,False,n/a,True
+Cathal_2024-07-02T16:35:47_to_read_ler,1,to_read_ler,2024-07-02T16:35:47,What is the Portuguese of To Read?,ler,True,n/a,True
+Cathal_2024-07-02T16:35:47_to_close_fechar,1,to_close_fechar,2024-07-02T16:35:47,What is the Portuguese of To Close?,cloasr,False,n/a,True
+Cathal_2024-07-02T16:44:12_worried_preocupad,1,worried_preocupad,2024-07-02T16:44:12,What is the Portuguese of Worried (feminine)?,anxida,False,n/a,True
+Cathal_2024-07-02T09:39:08_meat_section_carnes,1,meat_section_carnes,2024-07-02T16:44:12,What is the Portuguese of meat section?,carnes,True,n/a,True
+Cathal_2024-07-02T09:39:08_uncles/aunts_tios,1,uncles/aunts_tios,2024-07-02T16:44:12,What is the Portuguese of Uncles/Aunts?,tios,True,n/a,True
+Cathal_2024-07-02T09:39:08_sad_triste,1,sad_triste,2024-07-02T16:46:07,What is the Portuguese of Sad?,cansado,False,n/a,True
+Cathal_2024-07-02T09:39:08_to_have_drink/food_tomar,1,to_have_drink/food_tomar,2024-07-02T16:46:07,What is the Portuguese of To have drink/food?,jantar,False,n/a,True
+Cathal_2024-07-02T09:39:08_to_be_estar,1,to_be_estar,2024-07-02T16:46:07,What is the Portuguese of To Be(moods/situations)?,estar,True,n/a,True
+Cathal_2024-07-02T09:39:08_to_work_trabalhar,1,to_work_trabalhar,2024-07-02T16:46:07,What is the English of Trabalhar?,to work,True,n/a,True
+Cathal_2024-07-02T09:39:08_colleague_coleg,1,colleague_coleg,2024-07-02T16:46:07,What is the Portuguese of Colleague (feminine)?,colleaga,False,n/a,True
+Cathal_2024-07-02T09:39:08_to_love_adorar,1,to_love_adorar,2024-07-03T14:01:52,What is the English of Adorar?,to love,True,n/a,True
+Cathal_2024-07-02T09:39:08_to_do/make_fazer,1,to_do/make_fazer,2024-07-03T14:01:52,What is the Portuguese of To Do/Make?,fazer,True,n/a,True
+Cathal_2024-07-02T09:39:08_to_happen_acontecer,1,to_happen_acontecer,2024-07-03T14:03:23,What is the Portuguese of To Happen?,uhh,False,n/a,True
+Cathal_2024-07-02T09:39:08_unwell_mal,1,unwell_mal,2024-07-03T14:03:23,What is the Portuguese of Unwell?,mal,True,n/a,True
+Cathal_2024-07-02T09:39:08_to_arrive_chegar,1,to_arrive_chegar,2024-07-03T14:03:23,What is the Portuguese of To Arrive?,chegar,True,n/a,True
+Cathal_2024-07-02T09:39:08_to_see_ver,1,to_see_ver,2024-07-03T14:03:23,What is the Portuguese of To See?,ver,True,n/a,True
+Cathal_2024-07-02T09:39:08_to_dine_jantar,1,to_dine_jantar,2024-07-03T14:03:23,What is the Portuguese of To Dine?,jantar,True,n/a,True
+Cathal_2024-07-02T09:39:08_to_cook_cozinhar,1,to_cook_cozinhar,2024-07-03T14:19:39,What is the English of Cozinhar?,to cook,True,n/a,True
+Cathal_2024-07-02T09:39:08_to_lose_perder,1,to_lose_perder,2024-07-03T14:19:39,What is the English of Perder?,to lose,True,n/a,True
+Cathal_2024-07-03T16:02:59_to_go_for_walks_passear,1,to_go_for_walks_passear,2024-07-03T16:02:59,What is the English of Passear?,to go for a stroll,False,n/a,True
+Cathal_2024-07-08T14:43:18_to_sell_vender,1,to_sell_vender,2024-07-08T14:43:18,What is the English of Vender?,to sell,True,n/a,True
+Cathal_2024-07-10T16:02:47_to_love_adorar,1,to_love_adorar,2024-07-10T16:02:47,What is the English of Adorar?,to love,True,n/a,True
+Cathal_2024-07-10T16:05:16_surprised_surpreendid,1,surprised_surpreendid,2024-07-10T16:05:16,What is the Portuguese of Surprised (masculine)?,a,False,n/a,True
+Cathal_2024-07-10T16:05:16_farmer_agricultor,1,farmer_agricultor,2024-07-10T16:05:16,What is the Portuguese of Farmer (feminine)?,v,False,n/a,True
+Cathal_2024-07-10T16:05:16_grandchildren_netos,1,grandchildren_netos,2024-07-10T16:05:16,What is the Portuguese of Grandchildren?,b,False,n/a,True
+Cathal_2024-07-10T16:05:16_sleepy_sono,1,sleepy_sono,2024-07-10T16:05:16,What is the English of Sono?,c,False,n/a,True
+Cathal_2024-07-10T16:05:16_computing_informática,1,computing_informática,2024-07-10T16:05:16,What is the English of Informática?,d,False,n/a,True
+Cathal_2024-07-11T10:45:35_to_arrive_chegar,1,to_arrive_chegar,2024-07-11T10:45:35,What is the Portuguese of To Arrive?,chegar,True,n/a,True
+Cathal_2024-07-11T11:39:22_to_bring_trazer,1,to_bring_trazer,2024-07-11T11:39:22,What is the Portuguese of To Bring?,trazer,True,n/a,True
+Cathal_2024-07-11T14:47:51_lunch_almoço,1,lunch_almoço,2024-07-11T14:47:51,What is the Portuguese of Lunch?,refiçâo ,False,n/a,True
+Cathal_2024-07-12T11:14:48_modern_modern,1,modern_modern,2024-07-12T11:14:48,What is the English of Modern?,moderna,False,n/a,True
+Cathal_2024-07-12T11:14:48_bag_bolsa,1,bag_bolsa,2024-07-12T11:14:48,What is the English of Bolsa?,dance,False,n/a,True
+Cathal_2024-07-12T11:14:48_to_choose_escolher,1,to_choose_escolher,2024-07-12T11:14:48,What is the Portuguese of To Choose?,escohler,False,n/a,True
+Cathal_2024-07-12T11:14:48_grandchildren_netos,1,grandchildren_netos,2024-07-12T11:14:48,What is the English of Netos?,grandchildren,True,n/a,True
+Cathal_2024-07-12T11:14:48_to_taste/try_provar,1,to_taste/try_provar,2024-07-12T11:14:48,What is the English of Provar?,to prove,False,n/a,True
+Cathal_2024-07-12T13:12:47_to_taste/try_provar,1,to_taste/try_provar,2024-07-12T13:12:47,What is the English of Provar?,to prove,False,n/a,True
+Cathal_2024-07-12T14:23:01_to_close_fechar,1,to_close_fechar,2024-07-12T14:23:01,What is the English of Fechar?,to find,False,n/a,True
+Cathal_2024-07-12T14:33:09_to_love_adorar,1,to_love_adorar,2024-07-12T14:33:09,What is the English of Adorar?,to love,True,n/a,True
+Cathal_2024-07-12T15:16:42_to_sing_cantar,1,to_sing_cantar,2024-07-12T15:16:42,What is the Portuguese of To Sing?,cantar,True,n/a,True
+Cathal_2024-07-12T15:19:49_to_play_jogar,1,to_play_jogar,2024-07-12T15:19:49,What is the English of Jogar?,to play,True,n/a,True
+Cathal_2024-07-12T15:26:18_to_have_drink/food_tomar,1,to_have_drink/food_tomar,2024-07-12T15:26:18,What is the English of Tomar?,to dine,False,n/a,True
+Cathal_2024-07-12T15:28:17_waiter_empregad,1,waiter_empregad,2024-07-12T15:28:17,What is the English of empregada?,egg,False,n/a,True
+Cathal_2024-07-12T15:28:52_bored_aborrecid,1,bored_aborrecid,2024-07-12T15:28:52,What is the Portuguese of Bored (masculine)?,abborecido,False,n/a,True
+Cathal_2024-07-12T15:30:06_lawyer_advogad,1,lawyer_advogad,2024-07-12T15:30:06,What is the English of Advogada?,lawyer,True,n/a,True
+Cathal_2024-07-12T15:35:58_to_drink_beber,1,to_drink_beber,2024-07-12T15:35:58,What is the Portuguese of To Drink?,beber,True,n/a,True
+Cathal_2024-07-12T15:35:58_to_have_drink/food_tomar,1,to_have_drink/food_tomar,2024-07-12T15:35:58,What is the Portuguese of To have drink/food?,comer,False,n/a,True
+Cathal_2024-07-12T15:46:29_to_drink_beber,1,to_drink_beber,2024-07-12T15:46:29,What is the Portuguese of To Drink?,beber,True,n/a,True
+Cathal_2024-07-15T14:59:14_to_close_fechar,1,to_close_fechar,2024-07-15T14:59:14,What is the Portuguese of To Close?,fechar,True,n/a,True
+Cathal_2024-07-15T15:02:53_to_do/make_fazer,1,to_do/make_fazer,2024-07-15T15:02:53,What is the Portuguese of To Do/Make?,fazer,True,n/a,True
+Cathal_2024-07-15T15:33:42_cold_frio,1,cold_frio,2024-07-15T15:33:42,What is the Portuguese of Cold?,frio,True,n/a,True
+Cathal_2024-07-15T15:33:42_to_do/make_fazer,1,to_do/make_fazer,2024-07-15T15:33:42,What is the English of Fazer?,to do/make,True,n/a,True
+Cathal_2024-07-15T15:33:42_to_knit_tricotar,1,to_knit_tricotar,2024-07-15T15:33:42,What is the Portuguese of To Knit?,cozinhar,False,n/a,True
+Cathal_2024-07-16T23:04:15_to_eat_comer,1,to_eat_comer,2024-07-16T23:04:15,What is the Portuguese of To Eat?,áâ,False,n/a,True
+Cathal_2024-07-17T00:32:37_to_close_fechar,1,to_close_fechar,2024-07-17T00:32:37,What is the Portuguese of To Close?,fechar,True,n/a,True
+Cathal_2024-07-17T00:42:29_cheeses_queijos,1,cheeses_queijos,2024-07-17T00:42:29,What is the Portuguese of cheeses?,laites,False,n/a,True
+Cathal_2024-07-17T00:42:29_to_protect_proteger,1,to_protect_proteger,2024-07-17T00:42:29,What is the English of Proteger?,to protect,True,n/a,True
+Cathal_2024-07-17T00:43:32_meat_section_carnes,1,meat_section_carnes,2024-07-17T00:43:32,What is the English of carnes?,meat section,True,n/a,True
+Cathal_2024-07-17T00:43:32_to_read_ler,1,to_read_ler,2024-07-17T00:43:32,What is the Portuguese of To Read?,lér,False,n/a,True
+Cathal_2024-07-17T00:43:32_lightning_relâmpagos,1,lightning_relâmpagos,2024-07-17T00:43:32,What is the Portuguese of Lightning?,trazado,False,n/a,True
+Cathal_2024-07-17T00:47:08_grandson_neto,1,grandson_neto,2024-07-17T00:47:08,What is the English of Neto?,nephew,False,n/a,True
+Cathal_2024-07-17T00:47:08_to_surf_the_net_navegar,1,to_surf_the_net_navegar,2024-07-17T00:47:08,What is the English of Navegar?,to surf the web,False,n/a,True
+Cathal_2024-07-17T00:53:39_to_read_ler,1,to_read_ler,2024-07-17T00:53:39,What is the English of Ler?,to read,True,n/a,True
+Cathal_2024-07-17T00:53:39_bag_bolsa,1,bag_bolsa,2024-07-17T00:53:39,What is the Portuguese of Bag?,bola,False,n/a,True
+Cathal_2024-07-17T00:53:39_husband_marido/esposo,1,husband_marido/esposo,2024-07-17T00:53:39,What is the Portuguese of Husband?,marido/espodo,False,n/a,True
+Cathal_2024-07-17T00:53:39_snack_lanche,1,snack_lanche,2024-07-17T00:53:39,What is the Portuguese of Snack?,lançhe,False,n/a,True
+Cathal_2024-07-17T00:53:39_to_play_tocar,1,to_play_tocar,2024-07-17T00:53:39,What is the Portuguese of To Play(music)?,jogar,False,n/a,True
+Cathal_2024-07-17T00:54:21_grandmother_avó,1,grandmother_avó,2024-07-17T00:54:21,What is the English of Avó?,grandmother,True,n/a,True
+Cathal_2024-07-17T00:54:21_to_sing_cantar,1,to_sing_cantar,2024-07-17T00:54:21,What is the English of Cantar?,to sing,True,n/a,True
+Cathal_2024-07-17T00:54:21_town_planner_urbanista,1,town_planner_urbanista,2024-07-17T00:54:21,What is the English of Urbanista?,urban planner,False,n/a,True
+Cathal_2024-07-17T00:54:21_snow_neve,1,snow_neve,2024-07-17T00:54:21,What is the English of Neve?,snow,True,n/a,True
+Cathal_2024-07-17T00:54:21_meal_refeiçâo,1,meal_refeiçâo,2024-07-17T00:54:21,What is the English of refeiçâo?,meal,True,n/a,True
+Cathal_2024-07-17T00:54:21_to_see_ver,1,to_see_ver,2024-07-17T00:54:21,What is the English of Ver?,to see,True,n/a,True
+Cathal_2024-07-17T00:54:21_hungry_fome,1,hungry_fome,2024-07-17T00:54:21,What is the Portuguese of Hungry?,hungo,False,n/a,True
+Cathal_2024-07-17T00:54:21_to_like_gostar,1,to_like_gostar,2024-07-17T00:54:21,What is the Portuguese of To Like?,gostar,True,n/a,True
+Cathal_2024-07-17T00:54:21_to_sell_vender,1,to_sell_vender,2024-07-17T00:54:21,What is the English of Vender?,to sell,True,n/a,True
+Cathal_2024-07-17T00:54:21_dentist_dentista,1,dentist_dentista,2024-07-17T00:54:21,What is the Portuguese of Dentist?,dentista,True,n/a,True
+Cathal_2024-07-17T00:55:40_wife_mulher/esposa,1,wife_mulher/esposa,2024-07-17T00:55:40,What is the Portuguese of Wife?,marida/esposa,False,n/a,True
+Cathal_2024-07-17T00:55:40_tired_cansad,1,tired_cansad,2024-07-17T00:55:40,What is the English of Cansado?,tired,True,n/a,True
+Cathal_2024-07-17T00:55:40_to_be_able_to/can_poder,1,to_be_able_to/can_poder,2024-07-17T00:55:40,What is the English of Poder?,to be able,False,n/a,True
+Cathal_2024-07-17T00:55:40_salesperson_vendedor,1,salesperson_vendedor,2024-07-17T00:55:40,What is the English of Vendedoro?,shopkeeper,False,n/a,True
+Cathal_2024-07-17T00:55:40_to_like_gostar,1,to_like_gostar,2024-07-17T00:55:40,What is the Portuguese of To Like?,gostar,True,n/a,True
+Cathal_2024-07-17T00:55:40_to_go_for_walks_passear,1,to_go_for_walks_passear,2024-07-17T00:55:40,What is the English of Passear?,to go for a walk,False,n/a,True
+Cathal_2024-07-17T00:55:40_apartment_apartamento,1,apartment_apartamento,2024-07-17T00:55:40,What is the Portuguese of Apartment?,apartmento,False,n/a,True
+Cathal_2024-07-17T00:55:40_to_cook_cozinhar,1,to_cook_cozinhar,2024-07-17T00:55:40,What is the English of Cozinhar?,to cook,True,n/a,True
+Cathal_2024-07-17T00:55:40_businesswoman_empresária,1,businesswoman_empresária,2024-07-17T00:55:40,What is the Portuguese of Businesswoman?,businessa,False,n/a,True
+Cathal_2024-07-17T00:55:40_sweet_sobremesa,1,sweet_sobremesa,2024-07-17T00:55:40,What is the English of sobremesa?,yes,False,n/a,True
+Cathal_2024-07-17T00:55:40_to_work_trabalhar,1,to_work_trabalhar,2024-07-17T00:55:40,What is the English of Trabalhar?,to work,True,n/a,True
+Cathal_2024-07-17T00:55:40_to_sell_vender,1,to_sell_vender,2024-07-17T00:55:40,What is the Portuguese of To Sell?,vender,True,n/a,True
+Cathal_2024-07-17T00:55:40_cyclones_ciclones,1,cyclones_ciclones,2024-07-17T00:55:40,What is the Portuguese of Cyclones?,ciclones,True,n/a,True
+Cathal_2024-07-17T00:55:40_to_speak_falar,1,to_speak_falar,2024-07-17T00:55:40,What is the Portuguese of To Speak?,falar,True,n/a,True
+Cathal_2024-07-17T00:55:40_to_close_fechar,1,to_close_fechar,2024-07-17T00:55:40,What is the English of Fechar?,to close,True,n/a,True
+Cathal_2024-07-17T00:55:40_desert_doce,1,desert_doce,2024-07-17T00:55:40,What is the English of doce?,ice,False,n/a,True
+Cathal_2024-07-17T00:55:40_to_protect_proteger,1,to_protect_proteger,2024-07-17T00:55:40,What is the Portuguese of To Protect?,proteger,True,n/a,True
+Cathal_2024-07-17T00:55:40_to_know_conhecer,1,to_know_conhecer,2024-07-17T00:55:40,What is the Portuguese of To Know(person/place)?,cohencer,False,n/a,True
+Cathal_2024-07-17T00:55:40_teacher_professor,1,teacher_professor,2024-07-17T00:55:40,What is the English of Professora?,teacher,True,n/a,True
+Cathal_2024-07-17T00:55:40_to_bring_trazer,1,to_bring_trazer,2024-07-17T00:55:40,What is the English of Trazer?,to bring,True,n/a,True
+Cathal_2024-07-17T00:55:40_surprised_surpreendid,1,surprised_surpreendid,2024-07-17T00:55:40,What is the English of Surpreendida?,surprised,True,n/a,True
+Cathal_2024-07-17T00:55:40_to_eat_comer,1,to_eat_comer,2024-07-17T00:55:40,What is the English of Comer?,to eat,True,n/a,True
+Cathal_2024-07-17T00:55:40_plumber_canalizador,1,plumber_canalizador,2024-07-17T00:55:40,What is the English of Canalizadora?,plumber,True,n/a,True
+Cathal_2024-07-17T00:55:40_to_arrive_chegar,1,to_arrive_chegar,2024-07-17T00:55:40,What is the English of Chegar?,to buy,False,n/a,True
+Cathal_2024-07-17T00:55:40_modern_modern,1,modern_modern,2024-07-17T00:55:40,What is the Portuguese of Modern?,moderna,False,n/a,True
+Cathal_2024-07-17T00:55:40_to_be_estar,1,to_be_estar,2024-07-17T00:55:40,What is the Portuguese of To Be(moods/situations)?,estar,True,n/a,True
+Cathal_2024-07-17T00:55:40_a_uma,1,a_uma,2024-07-17T00:55:40,What is the Portuguese of A?,uma,True,n/a,True
+Cathal_2024-07-17T00:55:40_to_see_ver,1,to_see_ver,2024-07-17T00:55:40,What is the Portuguese of To See?,ver,True,n/a,True
+Cathal_2024-07-17T00:55:40_to_surf_the_net_navegar,1,to_surf_the_net_navegar,2024-07-17T00:55:40,What is the English of Navegar?,to surf the net,True,n/a,True
+Cathal_2024-07-17T00:55:40_farmer_agricultor,1,farmer_agricultor,2024-07-17T00:55:40,What is the English of Agricultora?,farmer,True,n/a,True
+Cathal_2024-07-17T00:55:40_photography_fotografia,1,photography_fotografia,2024-07-17T00:55:40,What is the Portuguese of Photography?,fotographia,False,n/a,True
+Cathal_2024-07-17T00:55:40_angry_zangad,1,angry_zangad,2024-07-17T00:55:40,What is the English of Zangado?,angry,True,n/a,True
+Cathal_2024-07-17T00:55:40_thunderstorm_trovoadas,1,thunderstorm_trovoadas,2024-07-17T00:55:40,What is the Portuguese of Thunderstorm?,trasomethingorother,False,n/a,True
+Cathal_2024-07-17T00:55:40_mother_mãe,1,mother_mãe,2024-07-17T00:55:40,What is the English of Mãe?,mother,True,n/a,True
+Cathal_2024-07-17T00:55:40_raining_chove,1,raining_chove,2024-07-17T00:55:40,What is the Portuguese of Raining?,raino,False,n/a,True
+Cathal_2024-07-17T00:55:40_poetry_poesia,1,poetry_poesia,2024-07-17T00:55:40,What is the English of Poesia?,aaaa,False,n/a,True
+Cathal_2024-07-17T00:55:40_dressmaking_costura,1,dressmaking_costura,2024-07-17T00:55:40,What is the Portuguese of Dressmaking?,tricotar,False,n/a,True
+Cathal_2024-07-17T00:55:40_bag_bolsa,1,bag_bolsa,2024-07-17T00:55:40,What is the English of Bolsa?,bag,True,n/a,True
+Cathal_2024-07-17T00:55:40_to_choose_escolher,1,to_choose_escolher,2024-07-17T00:55:40,What is the Portuguese of To Choose?,o chooso,False,n/a,True
+Cathal_2024-07-17T00:55:40_dentist_dentista,1,dentist_dentista,2024-07-17T00:55:40,What is the English of Dentista?,dentist,True,n/a,True
+Cathal_2024-07-17T00:55:40_to_play_tocar,1,to_play_tocar,2024-07-17T00:55:40,What is the Portuguese of To Play(music)?,tocar,True,n/a,True
+Cathal_2024-07-17T00:55:40_to_participate_participar,1,to_participate_participar,2024-07-17T00:55:40,What is the English of Participar?,to participate,True,n/a,True
+Cathal_2024-07-17T00:55:40_to_read_ler,1,to_read_ler,2024-07-17T00:55:40,What is the Portuguese of To Read?,ler,True,n/a,True
+Cathal_2024-07-17T00:55:40_lawyer_advogad,1,lawyer_advogad,2024-07-17T00:55:40,What is the English of Advogado?,lawyer,True,n/a,True
+Cathal_2024-07-17T11:53:01_to_dance_dançar,1,to_dance_dançar,2024-07-17T11:53:01,What is the English of Dançar?,to dance,True,n/a,True
+Cathal_2024-07-17T12:04:57_to_do/make_fazer,1,to_do/make_fazer,2024-07-17T12:04:57,What is the English of Fazer?,to make/do,False,n/a,True
+Cathal_2024-07-17T12:04:57_grandfather_avô,1,grandfather_avô,2024-07-17T12:04:57,What is the English of Avô?,grandmother,False,n/a,True
+Cathal_2024-07-17T12:04:57_to_go_for_walks_passear,1,to_go_for_walks_passear,2024-07-17T12:04:57,What is the Portuguese of To go for Walks(stroll)?,passear,True,n/a,True
+Cathal_2024-07-17T12:04:57_to_sell_vender,1,to_sell_vender,2024-07-17T12:04:57,What is the English of Vender?,to sell,True,n/a,True
+Cathal_2024-07-17T12:04:57_to_close_fechar,1,to_close_fechar,2024-07-17T12:04:57,What is the Portuguese of To Close?,fechar,True,n/a,True
+Cathal_2024-07-17T12:04:57_to_happen_acontecer,1,to_happen_acontecer,2024-07-17T12:04:57,What is the English of Acontecer?,som,False,n/a,True
+Cathal_2024-07-17T12:04:57_to_speak_falar,1,to_speak_falar,2024-07-17T12:04:57,What is the English of Falar?,to speak,True,n/a,True
+Cathal_2024-07-17T12:04:57_to_sing_cantar,1,to_sing_cantar,2024-07-17T12:04:57,What is the Portuguese of To Sing?,cantar,True,n/a,True
+Cathal_2024-07-17T12:04:57_pottery_cerâmica,1,pottery_cerâmica,2024-07-17T12:04:57,What is the English of Cerâmica?,pottery,True,n/a,True
+Cathal_2024-07-17T12:04:57_father_pai,1,father_pai,2024-07-17T12:04:57,What is the English of Pai?,father,True,n/a,True
+Cathal_2024-07-17T12:04:57_cyclones_ciclones,1,cyclones_ciclones,2024-07-17T12:04:57,What is the English of Ciclones?,cyclones,True,n/a,True
+Cathal_2024-07-17T12:04:57_to_know_conhecer,1,to_know_conhecer,2024-07-17T12:04:57,What is the Portuguese of To Know(person/place)?,cohencer,False,n/a,True
+Cathal_2024-07-17T12:04:57_lawyer_advogad,1,lawyer_advogad,2024-07-17T12:04:57,What is the Portuguese of Lawyer (masculine)?,advogado,True,n/a,True
+Cathal_2024-07-17T12:04:57_town_planner_urbanista,1,town_planner_urbanista,2024-07-17T12:04:57,What is the English of Urbanista?,town planner,True,n/a,True
+Cathal_2024-07-17T12:04:57_to_wish/want_querer,1,to_wish/want_querer,2024-07-17T12:04:57,What is the English of Querer?,to wish/want,True,n/a,True
+Cathal_2024-07-17T12:06:36_to_purchase_comprar,1,to_purchase_comprar,2024-07-17T12:06:36,What is the Portuguese of To Purchase?,comprar,True,n/a,True
+Cathal_2024-07-17T12:08:09_to_work_trabalhar,1,to_work_trabalhar,2024-07-17T12:08:09,What is the Portuguese of To Work?,trabalhar,True,n/a,True
+Cathal_2024-07-17T12:08:09_to_purchase_comprar,1,to_purchase_comprar,2024-07-17T12:08:09,What is the Portuguese of To Purchase?,comprar,True,n/a,True
+Cathal_2024-07-17T12:08:09_to_happen_acontecer,1,to_happen_acontecer,2024-07-17T12:08:09,What is the English of Acontecer?,as,False,n/a,True
+Cathal_2024-07-17T12:08:09_to_live_morar,1,to_live_morar,2024-07-17T12:08:09,What is the English of Morar?,to kill,False,n/a,True
+Cathal_2024-07-17T12:08:09_to_dine_jantar,1,to_dine_jantar,2024-07-17T12:08:09,What is the Portuguese of To Dine?,tomar,False,n/a,True
+Cathal_2024-07-17T12:08:09_to_see_ver,1,to_see_ver,2024-07-17T12:08:09,What is the English of Ver?,to see,True,n/a,True
+Cathal_2024-07-17T12:08:09_to_travel_viajar,1,to_travel_viajar,2024-07-17T12:08:09,What is the Portuguese of To Travel?,trazer,False,n/a,True
+Cathal_2024-07-17T12:08:09_to_do/make_fazer,1,to_do/make_fazer,2024-07-17T12:08:09,What is the Portuguese of To Do/Make?,fazer,True,n/a,True
+Cathal_2024-07-17T12:08:09_to_sell_vender,1,to_sell_vender,2024-07-17T12:08:09,What is the Portuguese of To Sell?,vender,True,n/a,True
+Cathal_2024-07-17T12:08:09_to_lose_perder,1,to_lose_perder,2024-07-17T12:08:09,What is the Portuguese of To Lose?,perder,True,n/a,True
+Cathal_2024-07-17T12:08:09_to_be_ser,1,to_be_ser,2024-07-17T12:08:09,What is the English of Ser?,to be,True,n/a,True
+Cathal_2024-07-17T12:08:09_to_know_conhecer,1,to_know_conhecer,2024-07-17T12:08:09,What is the Portuguese of To Know(person/place)?,cohencer,False,n/a,True
+Cathal_2024-07-17T12:08:09_to_play_jogar,1,to_play_jogar,2024-07-17T12:08:09,What is the English of Jogar?,to play,True,n/a,True
+Cathal_2024-07-17T12:08:09_to_be_estar,1,to_be_estar,2024-07-17T12:08:09,What is the Portuguese of To Be(moods/situations)?,estar,True,n/a,True
+Cathal_2024-07-17T12:33:35_to_happen_acontecer,1,to_happen_acontecer,2024-07-17T12:33:35,What is the English of Acontecer?,to learn,False,n/a,TrueTrue
+Cathal_2024-07-17T12:35:57_to_say/tell_dizer,1,to_say/tell_dizer,2024-07-17T12:35:57,What is the Portuguese of To Say/Tell?,dizer,True,n/a,True
+Cathal_2024-07-17T12:36:14_to_love_adorar,1,to_love_adorar,2024-07-17T12:36:14,What is the Portuguese of To Love?,amorar,False,n/a,True
+Cathal_2024-07-17T12:36:14_to_have_drink/food_tomar,1,to_have_drink/food_tomar,2024-07-17T12:36:14,What is the English of Tomar?,to eat/drink,False,n/a,True
+Cathal_2024-07-17T12:36:14_to_taste/try_provar,1,to_taste/try_provar,2024-07-17T12:36:14,What is the Portuguese of To Taste/Try?,taster,False,n/a,True
+Cathal_2024-07-17T12:36:14_to_sell_vender,1,to_sell_vender,2024-07-17T12:36:14,What is the Portuguese of To Sell?,vender,True,n/a,True
+Cathal_2024-07-17T12:36:14_to_arrive_chegar,1,to_arrive_chegar,2024-07-17T12:36:14,What is the Portuguese of To Arrive?,chegar,True,n/a,True
+Cathal_2024-07-17T12:36:14_to_eat_comer,1,to_eat_comer,2024-07-17T12:36:14,What is the Portuguese of To Eat?,comer,True,n/a,True
+Cathal_2024-07-17T12:36:14_to_dine_jantar,1,to_dine_jantar,2024-07-17T12:36:14,What is the Portuguese of To Dine?,jantar,True,n/a,True
+Cathal_2024-07-17T12:36:14_to_purchase_comprar,1,to_purchase_comprar,2024-07-17T12:36:14,What is the Portuguese of To Purchase?,comprar,True,n/a,True
+Cathal_2024-07-17T12:36:14_to_play_jogar,1,to_play_jogar,2024-07-17T12:36:14,What is the Portuguese of To Play(game/sports)?,jogar,True,n/a,True
+Cathal_2024-07-17T12:36:14_to_knit_tricotar,1,to_knit_tricotar,2024-07-17T12:36:14,What is the Portuguese of To Knit?,tricotar,True,n/a,True
+Cathal_2024-07-17T12:37:23_to_live_morar,1,to_live_morar,2024-07-17T12:37:23,What is the English of Morar?,to live,True,n/a,True
+Cathal_2024-07-17T12:37:23_to_be_able_to/can_poder,1,to_be_able_to/can_poder,2024-07-17T12:37:23,What is the Portuguese of To be able to/Can?,poder,True,n/a,True
+Cathal_2024-07-17T12:37:23_to_be_estar,1,to_be_estar,2024-07-17T12:37:23,What is the English of Estar?,to be,True,moods/situations,True
+Cathal_2024-07-17T12:37:23_to_love_adorar,1,to_love_adorar,2024-07-17T12:37:23,What is the Portuguese of To Love?,amorar,False,n/a,True
+Cathal_2024-07-17T12:37:23_to_happen_acontecer,1,to_happen_acontecer,2024-07-17T12:37:23,What is the English of Acontecer?,to happen,True,n/a,True
+Cathal_2024-07-17T15:45:18_to_go_for_walks_passear,1,to_go_for_walks_passear,2024-07-17T15:45:18,What is the English of Passear?,to go for a walk,False,stroll,False
+Cathal_2024-07-17T15:53:02_to_drink_beber,1,to_drink_beber,2024-07-17T15:53:02,What is the English of Beber?,to drink,True,n/a,True
+Cathal_2024-07-17T15:53:50_to_dance_dançar,1,to_dance_dançar,2024-07-17T15:53:50,What is the English of Dançar?,to dance,True,n/a,True
+Cathal_2024-07-17T16:11:09_to_arrive_chegar,1,to_arrive_chegar,2024-07-17T16:11:09,What is the English of Chegar?,to arrive,True,n/a,True
+Cathal_2024-07-17T16:11:09_to_sing_cantar,1,to_sing_cantar,2024-07-17T16:11:09,What is the English of Cantar?,to arrive,False,n/a,True
+Cathal_2024-07-17T16:24:34_to_wish/want_querer,1,to_wish/want_querer,2024-07-17T16:24:34,What is the English of Querer?,to wish/want,True,n/a,True
+Cathal_2024-07-17T16:25:50_to_happen_acontecer,1,to_happen_acontecer,2024-07-17T16:25:50,What is the Portuguese of To Happen?,acontecer,True,n/a,True
+Cathal_2024-07-17T16:27:37_to_happen_acontecer,1,to_happen_acontecer,2024-07-17T16:27:37,What is the Portuguese of To Happen?,acontecer,True,n/a,True

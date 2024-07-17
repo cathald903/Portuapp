@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Hi, {{user.username}}!</h1>
+<div>
+    <p>Here, learn a random word:<br>
+        {{word.english}} =
+        {{word.portuguese}}
+    </p>
+</div>
+{% endblock %}

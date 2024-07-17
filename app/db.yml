@@ -1,0 +1,4 @@
+mysql_host: "db:3306"
+mysql_user: "user"
+mysql_password: "password"
+mysql_db: "mysqldb"

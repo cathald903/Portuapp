@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form action="" method="post" novalidate>
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.num_of_questions.label }}<br>
+        {{ form.num_of_questions(size=32) }}<br>
+        {% for error in form.num_of_questions.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+        {{ form.context.label }}: {{ form.context(size=1) }}
+        {% for error in form.context.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.quiz_area.label }}:<br>
+        {{ form.quiz_area(size=3) }}
+        {% for error in form.quiz_area.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}<br>
+        {{ form.verb_conjugation.label }}:<br>
+        {{ form.verb_conjugation(size=4) }}
+        {% for error in form.verb_conjugation.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+    {% if form.errors %}
+    {{ form.errors }}
+    {% endif %}
+    <p>{{ form.submit() }}</p>
+</form>
+{% endblock %}

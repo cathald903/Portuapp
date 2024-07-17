@@ -1,0 +1,8 @@
+conjugation questions
+redirect to new page
+if redirected with verb provided conjugate that verb
+else pick random verb. Also have irregular filterable
+
+Then we can have a conjugation and a translation tester
+
+adding/updating/ deleting vocab and verbs

@@ -1,0 +1,12 @@
+flask
+sqlalchemy
+flask_bcrypt
+flask_sqlalchemy
+flask_wtf
+flask_login
+flask_paginate
+pymysql
+psycopg2-binary
+pytz
+pyyaml
+mysqlclient==2.1.1

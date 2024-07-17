@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Two O Lingo</title>
+</head>
+<script>
+    function insertChar(char) {
+        const activeElement = document.activeElement;
+        if (activeElement && activeElement.tagName === 'INPUT' && activeElement.type === 'text') {
+            const start = activeElement.selectionStart;
+            const end = activeElement.selectionEnd;
+            const value = activeElement.value;
+            activeElement.value = value.slice(0, start) + char + value.slice(end);
+            activeElement.setSelectionRange(start + char.length, start + char.length);
+            activeElement.focus();
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const specialChars = document.getElementById('specialChars');
+        specialChars.addEventListener('mousedown', (event) => {
+            event.preventDefault();
+        });
+    });
+</script>
+
+<body>
+    <div>
+        <a href="{{ url_for('main.homepage') }}">Home</a>
+        <a href="{{ url_for('main.quiz') }}">Quiz</a>
+        <a href="{{ url_for('main.get_answers')}}">Answer History</a>
+        <!--<a href="{{ url_for('main.debug') }}">Debug</a>-->
+        <a href="{{ url_for('main.profile') }}">Profile</a>
+        <a href="{{ url_for('main.logout') }}">Logout</a>
+    </div>
+    <hr>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block content %}
+<form action="" method="post" novalidate>
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.question.label }}
+    </p>
+    <p>
+        {{ form.answer(size=32) }}<br>
+    <div id="specialChars">
+        <span onclick="insertChar('ç')">ç</span>
+        <span onclick="insertChar('é')">é</span>
+        <span onclick="insertChar('ê')">ê</span>
+        <span onclick="insertChar('ó')">ó</span>
+        <span onclick="insertChar('ô')">ô</span>
+        <span onclick="insertChar('á')">á</span>
+        <span onclick="insertChar('â')">â</span>
+        <span onclick="insertChar('ã')">ã</span>
+        <span onclick="insertChar('ú')">ú</span>
+    </div>
+    {% for error in form.answer.errors %}
+    <span style="color: red;">[{{ error }}]</span>
+    {% endfor %}
+    </p>
+    {% if quiz_on_context %}
+    <p>
+        {{ form.context_question.label }}
+    </p>
+    <p>
+        {{ form.context_answer(size=32) }}<br>
+        {% for error in form.context_answer.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+        {% endif %}
+        {{ form.conjugation.hidden_tag() }}
+        {% if form.quiz_on_conjugation.data != 'No' %}
+        {{form.conjugation.eu.label}} {{form.conjugation.eu}}<br>
+        {{form.conjugation.tu.label}} {{form.conjugation.tu}}<br>
+        {{form.conjugation.el.label}} {{form.conjugation.el}}<br>
+        {{form.conjugation.nos.label}} {{form.conjugation.nos}}<br>
+        {{form.conjugation.vos.label}} {{form.conjugation.vos}}<br>
+        {{form.conjugation.els.label}} {{form.conjugation.els}}<br>
+        {% endif %}
+        {% for error in form.conjugation.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+
+    <p>{{ form.submit() }}</p>
+
+
+</form>
+{% endblock %}

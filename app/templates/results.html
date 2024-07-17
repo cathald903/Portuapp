@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Initialize flatpickr for date-time pickers
+        flatpickr('.datetimepicker', {
+            enableTime: true,
+            dateFormat: "Y-m-dTH:i:S",
+        });
+
+        // Listen for form submission
+        document.querySelector('form').addEventListener('submit', function () {
+            // Set default value for start_date_filter if empty
+            var start_date_element = document.querySelector('.datetimepicker[name="date_start_filter"]');
+            if (!start_date_element.value) {
+                start_date_element._flatpickr.setDate('2024-01-01T00:00:00'); // Set default date-time value
+            }
+            var end_date_element = document.querySelector('.datetimepicker[name="date_end_filter"]');
+            if (!end_date_element.value) {
+                end_date_element._flatpickr.setDate(new Date()); // Set default date-time value
+            }
+        });
+    });
+</script>
+<form action="" method="post" novalidate>
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.date_start_filter.label }}: {{ form.date_start_filter(class="datetimepicker") }}
+        {{ form.date_end_filter.label }}: {{ form.date_end_filter(class="datetimepicker") }}<br>
+        Answer: {{ form.correct_filter(size=1) }}<br>
+        {{ form.word_filter.label }}:<br>
+        {{ form.word_filter(size=1) }}
+    </p>
+    <p>{{ form.submit }}</p>
+</form>
+
+<table id="data" class="table table-striped">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Word_id</th>
+            <th>Question</th>
+            <th>My answer</th>
+            <th>Context</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for answer in answers %}
+        <tr>
+            <td>{{ answer.date }} </td>
+            <td>{{ answer.word_id }} </td>
+            <td>{{ answer.question }}</td>
+            <td>{% if answer.correct %}
+                <span style="color: green;">{{answer.given_answer}}</span>
+                {% else %}
+                <span style="color: red;">{{answer.given_answer}}</span>
+                {% endif %}
+            </td>
+            <td>{% if answer.context_correct %}
+                <span style="color: green;">{{answer.context}}</span>
+                {% else %}
+                <span style="color: red;">{{answer.context}}</span>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% if prev_url %}
+<a href="{{ prev_url }}">Previous</a>
+{% endif %}
+{% if next_url %}
+<a href="{{ next_url }}">Next</a>
+{% endif %}
+
+{% endblock %}
