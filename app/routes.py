@@ -2,6 +2,7 @@
 Definitions of all the app routes
 """
 import random
+import urllib.parse
 from datetime import datetime
 from flask import Blueprint, redirect, render_template, url_for, request, session, current_app
 from flask_login import login_user, login_required, logout_user, current_user
@@ -10,10 +11,10 @@ from app import db, bcrypt, login_manager
 from app.database import save_answer
 from app.config import current_datetime, datetime_format
 from app.filters import build_query, get_filter_dict
-from app.forms import QuestionSetupForm, QuestionForm, LoginForm, RegisterForm, ResultsForm
+from app.forms import QuestionSetupForm, QuestionForm, LoginForm, RegisterForm, ResultsForm, ConjugationForm, TestForm
 from app.models import Vocab, Verb, Answers, User, UserSubscription
 from app.questions import get_questions
-
+from app.route_functions import check_quiz_finished, validate_conjugation, redirect_to_answer_page
 
 main = Blueprint('main', __name__)
 
@@ -80,19 +81,28 @@ def register():
     return render_template('register.html', form=form)
 
 
-def check_quiz_finished(question_number, number_of_questions):
-    if question_number >= number_of_questions-1:
-        session.pop('question_dict')
-        return True
-
-    else:
-        session['question_dict']['number'] += 1
-        session.modified = True
-        return False
+@ main.route('/conjugate/<word_id>/<user_answer>/<context>', methods=['GET', 'POST'])
+def conjugate(word_id: str, user_answer: str, context: str):
+    word_id = word_id.replace(" slashify ", "/")
+    user_answer = user_answer.replace(" slashify ", "/")
+    context = context.replace(" slashify ", "/")
+    question_dict = session['question_dict']
+    question_set = question_dict['question_set']
+    form = ConjugationForm()
+    form.tense.data = question_dict.get('quiz_on_conjugation')
+    if form.validate_on_submit():
+        save_answer(user_answer,
+                    context,
+                    validate_conjugation(form, question_set[question_dict['number']]['word_id']))
+        if check_quiz_finished(question_dict['number'], len(question_set)):
+            return redirect_to_answer_page(question_dict)
+        else:
+            return redirect(url_for('main.question_page'))
+    return render_template('conjugation.html', form=form, word_id=word_id, tense=question_dict.get('quiz_on_conjugation').lower())
 
 
 @ main.route('/question_page', methods=['GET', 'POST'])
-@login_required
+@ login_required
 def question_page():
     """
 
@@ -102,21 +112,25 @@ def question_page():
     question = question_set[question_dict['number']]
     form = QuestionForm()
     if form.validate_on_submit():
-        save_answer(request.form.get('answer').lower(),
-                    request.form.get('context_answer', 'n/a'))
+        if question_dict.get('quiz_on_conjugation', 'No') != 'No' and question['kind'] != 'Vocab':
+            encoded_word_id = question['word_id'].lower().replace(
+                "/", " slashify ")
+            encoded_user_answer = request.form.get(
+                'answer').lower().replace("/", " slashify ")
+            encoded_context = request.form.get(
+                'context_answer', 'n/a').replace("/", " slashify ")
+            return redirect(url_for('main.conjugate', word_id=encoded_word_id, user_answer=encoded_user_answer, context=encoded_context))
+        else:
+            save_answer(request.form.get('answer').lower(),
+                        request.form.get('context_answer', 'n/a'),
+                        'True')
         if check_quiz_finished(question_dict['number'], len(question_set)):
-            filter_time = datetime.strptime(
-                question_dict['datetime_id'], datetime_format)
-            session['filter_dict'] = {'start_date': filter_time,
-                                      'end_date': filter_time,
-                                      'word_filter': 'All',
-                                      'correct_filter': 'None'}
-            return redirect(url_for('main.get_answers'))
+            return redirect_to_answer_page(question_dict)
+        else:
+            question = question_set[question_dict['number']]
 
     form.question.label = question['question']
     form.context_question.label = question.get('context_question')
-    form.quiz_on_conjugation.data = question_dict.get(
-        'quiz_on_conjugation', 'No')
     form.answer.data = None
     return render_template('question.html', title='Quiz Time', form=form,
                            quiz_on_context=len(question.get('context_answer', '')) > 0)
@@ -150,6 +164,13 @@ def profile():
 @ main.route('/debug')
 def debug():
     break_here
+
+
+@ main.route('/test')
+@ login_required
+def test():
+    form = TestForm()
+    return render_template('test.html', form=form)
 
 
 @ main.route('/show_answers/', methods=['GET', 'POST'])

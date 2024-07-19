@@ -44,6 +44,7 @@
             <th>Question</th>
             <th>My answer</th>
             <th>Context</th>
+            <th>Conjugation</th>
         </tr>
     </thead>
     <tbody>
@@ -62,6 +63,12 @@
                 <span style="color: green;">{{answer.context}}</span>
                 {% else %}
                 <span style="color: red;">{{answer.context}}</span>
+                {% endif %}
+            </td>
+            <td>{% if answer.conjugation_correct %}
+                <span style="color: green;">{{answer.conjugation_correct}}</span>
+                {% else %}
+                <span style="color: red;">{{answer.conjugation_correct}}</span>
                 {% endif %}
             </td>
         </tr>

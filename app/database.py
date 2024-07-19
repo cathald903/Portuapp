@@ -26,26 +26,25 @@ def import_from_csv(file: str, obj: object):
         except Exception as e:
             db.session.rollback()
             print(e)
-            pass
 
 
-def save_answer_to_database(user_id, question_id, datetime_id, question, correct_answer, user_answer, correct_context, user_context):
+def save_answer_to_database(user_id, question_id, datetime_id, question, correct_answer, user_answer, correct_context, user_context, user_conjugation):
     answer_obj = Answers([user_id, question_id, datetime_id, question,
-                         correct_answer, user_answer, correct_context, user_context])
+                         correct_answer, user_answer, correct_context, user_context, user_conjugation])
     db.session.add(answer_obj)
     db.session.commit()
     return answer_obj
 
 
-def save_answer_to_csv(answer_id, user_id, question_id, date, question, given_answer, correct, context_answer, context_correct):
+def save_answer_to_csv(answer_id, user_id, question_id, date, question, given_answer, correct, context_answer, context_correct, user_conjugation):
     try:
         append_to_csv(os.getenv('ANSWER_FILE'), (answer_id, user_id, question_id, date,
-                                                 question, given_answer, correct, context_answer, context_correct))
+                                                 question, given_answer, correct, context_answer, context_correct, user_conjugation))
     except:
         print(f"unable to write row to {os.getenv('ANSWER_FILE')}")
 
 
-def save_answer(user_answer, user_context):
+def save_answer(user_answer, user_context, user_conjugation):
     question_dict = session['question_dict']
     question = question_dict['question_set'][question_dict['number']]
     datetime_id = question_dict['datetime_id']
@@ -54,10 +53,10 @@ def save_answer(user_answer, user_context):
     answer_obj = save_answer_to_database(current_user.id,
                                          question['id'], datetime_id, question['question'],
                                          correct_answer, user_answer,
-                                         correct_context, user_context)
+                                         correct_context, user_context, user_conjugation)
     save_answer_to_csv(answer_obj.id, current_user.id, question['id'], datetime_id,
                        question['question'], user_answer, answer_obj.correct,
-                       correct_context, answer_obj.context_correct)
+                       correct_context, answer_obj.context_correct, user_conjugation)
 
 
 def append_to_csv(filename, data):

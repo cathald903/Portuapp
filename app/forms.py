@@ -51,18 +51,20 @@ class QuestionSetupForm(FlaskForm):
 
 
 class ConjugationForm(FlaskForm):
-    eu = StringField('Eu', validators=[DataRequired()], default='', render_kw={
+    eu = StringField('Eu', validators=[DataRequired()],  render_kw={
         'autofocus': True})
-    tu = StringField('Tu', validators=[DataRequired()], default='', render_kw={
+    tu = StringField('Tu', validators=[DataRequired()],  render_kw={
         'autofocus': True})
-    el = StringField('Ele/Ela/Você', validators=[DataRequired()], default='', render_kw={
+    el = StringField('Ele/Ela/Você', validators=[DataRequired()],  render_kw={
         'autofocus': True})
-    nos = StringField('Nós', validators=[DataRequired()], default='', render_kw={
+    nos = StringField('Nós', validators=[DataRequired()],  render_kw={
         'autofocus': True})
-    vos = StringField('Vós', validators=[DataRequired()], default='', render_kw={
+    vos = StringField('Vós', validators=[DataRequired()],  render_kw={
         'autofocus': True})
-    els = StringField('Eles/Elas/Vocês', validators=[DataRequired()], default='', render_kw={
+    els = StringField('Eles/Elas/Vocês', validators=[DataRequired()],  render_kw={
         'autofocus': True})
+    tense = StringField('')
+    submit = SubmitField('Submit Answer')
 
 
 class QuestionForm(FlaskForm):
@@ -100,3 +102,8 @@ class ResultsForm(FlaskForm):
     correct_filter = SelectField('correct', choices=[('None', 'All'), (
         'True', 'Correct'), ('False', 'Incorrect')], default='None')
     submit = SubmitField('Filter')
+
+
+class TestForm(FlaskForm):
+    question = SelectField(
+        choices=[('True', 'Correct'), ('False', 'Incorrect')])

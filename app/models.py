@@ -175,6 +175,7 @@ class Answers(db.Model):
     correct: bool = db.Column(db.Boolean)
     context: str = db.Column(db.String(20), nullable=False)
     context_correct: bool = db.Column(db.Boolean)
+    conjugation_correct: bool = db.Column(db.Boolean)
 
     def __init__(self, inputs: list, from_csv: bool = False):
         if from_csv:
@@ -183,7 +184,7 @@ class Answers(db.Model):
             self.append_from_app(*inputs)
 
     def append_from_csv(self, id_: str, user_id: int, word_id: int, date: str, question: str,
-                        given_answer: str, correct: str, context: str, context_correct: bool):
+                        given_answer: str, correct: str, context: str, context_correct: bool, user_conjugation: bool):
         self.id = id_
         self.word_id = word_id
         self.date = date
@@ -193,9 +194,10 @@ class Answers(db.Model):
         self.context = context
         self.context_correct = context_correct == "True"
         self.user = User.query.filter_by(id=user_id).first()
+        self.conjugation_correct = user_conjugation == 'True'
 
     def append_from_app(self, user_id: int, word_id: int, date: str, question: str,
-                        correct_answer: str, given_answer: str, correct_context: str, given_context: str):
+                        correct_answer: str, given_answer: str, correct_context: str, given_context: str, user_conjugation: bool):
         user_object = User.query.filter_by(id=user_id).first()
         self.id = "_".join([user_object.username, date, word_id])
         self.word_id = word_id
@@ -206,6 +208,7 @@ class Answers(db.Model):
         self.context = correct_context
         self.context_correct = correct_context.lower() == given_context.lower()
         self.user = user_object
+        self.conjugation_correct = user_conjugation == 'True'
 
     def __repr__(self):
         return f"""<id {self.id!r},
@@ -217,5 +220,6 @@ class Answers(db.Model):
                     correct  {self.correct!r},
                     given_context {self.given_context!r},
                     context_correct  {self.context_correct!r},
-                    user {self.user!r}
+                    user {self.user!r},
+                    user_conjugation{self.user_conjugation!r}
                     >"""

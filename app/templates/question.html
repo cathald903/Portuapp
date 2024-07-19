@@ -32,20 +32,10 @@
         <span style="color: red;">[{{ error }}]</span>
         {% endfor %}
         {% endif %}
-        {{ form.conjugation.hidden_tag() }}
-        {% if form.quiz_on_conjugation.data != 'No' %}
-        {{form.conjugation.eu.label}} {{form.conjugation.eu}}<br>
-        {{form.conjugation.tu.label}} {{form.conjugation.tu}}<br>
-        {{form.conjugation.el.label}} {{form.conjugation.el}}<br>
-        {{form.conjugation.nos.label}} {{form.conjugation.nos}}<br>
-        {{form.conjugation.vos.label}} {{form.conjugation.vos}}<br>
-        {{form.conjugation.els.label}} {{form.conjugation.els}}<br>
-        {% endif %}
-        {% for error in form.conjugation.errors %}
-        <span style="color: red;">[{{ error }}]</span>
-        {% endfor %}
     </p>
-
+    {% for error in form.errors %}
+    <span style="color: red;">[{{ error }}]</span>
+    {% endfor %}
     <p>{{ form.submit() }}</p>
 
 

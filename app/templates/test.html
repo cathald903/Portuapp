@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div>
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        {{form.question}}
+        {% if form.question.data == 'Correct' %}
+        This is true
+        {% else %}
+        This is false
+        {{form.question.data}}
+        {% endif %}
+    </form>
+</div>
+{% endblock %}

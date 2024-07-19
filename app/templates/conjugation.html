@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<form method="POST" action="">
+    {{form.hidden_tag()}}
+    <p>
+        Conjugate {{word_id}} in the {{tense}} tense:<br>
+        {{form.eu.label}} {{form.eu}}<br>
+        {{form.tu.label}} {{form.tu}}<br>
+        {{form.el.label}} {{form.el}}<br>
+        {{form.nos.label}} {{form.nos}}<br>
+        {{form.vos.label}} {{form.vos}}<br>
+        {{form.els.label}} {{form.els}}<br>
+        {% for error in form.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+    <p>{{ form.submit() }}</p>
+</form>
+{% endblock content %}
