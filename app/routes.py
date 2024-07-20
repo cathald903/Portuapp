@@ -4,14 +4,14 @@ Definitions of all the app routes
 import random
 import urllib.parse
 from datetime import datetime
-from flask import Blueprint, redirect, render_template, url_for, request, session, current_app
+from flask import Blueprint, flash, redirect, render_template, url_for, request, session, current_app
 from flask_login import login_user, login_required, logout_user, current_user
 from flask_paginate import Pagination
 from app import db, bcrypt, login_manager
 from app.database import save_answer
 from app.config import current_datetime, datetime_format
 from app.filters import build_query, get_filter_dict
-from app.forms import QuestionSetupForm, QuestionForm, LoginForm, RegisterForm, ResultsForm, ConjugationForm, TestForm
+from app.forms import QuestionSetupForm, QuestionForm, LoginForm, RegisterForm, ResultsForm, ConjugationForm
 from app.models import Vocab, Verb, Answers, User, UserSubscription
 from app.questions import get_questions
 from app.route_functions import check_quiz_finished, validate_conjugation, redirect_to_answer_page
@@ -144,11 +144,15 @@ def quiz():
     """
     setup_form = QuestionSetupForm()
     if setup_form.validate_on_submit():
+        question_set = get_questions(int(request.form.get(
+            'num_of_questions')), request.form.get('quiz_area'))
+        if len(question_set) == 0:
+            flash('Subscribe to some words first!')
+            return redirect(url_for('main.profile'))
         session['question_dict'] = {
             'datetime_id': current_datetime('string'),
             'number': 0,
-            'question_set': get_questions(int(request.form.get(
-                'num_of_questions')), request.form.get('quiz_area')),
+            'question_set': question_set,
             'quiz_on_context': request.form.get('context', ''),
             'quiz_on_conjugation': request.form.get('verb_conjugation', 'No')}
         return redirect(url_for('main.question_page'))
@@ -158,7 +162,63 @@ def quiz():
 @ main.route('/profile')
 @ login_required
 def profile():
-    return render_template('profile.html', user=current_user)
+    sub = db.session.query(UserSubscription).filter_by(
+        user_id=current_user.id).all()
+    return render_template('profile.html', subs=sub)
+
+
+@ main.route('/profile/subscription/<kind>', methods=['GET', 'POST'])
+@ login_required
+def subscription(kind: str):
+    page = request.args.get('page', 1, type=int)
+    per_page = 20
+    if kind == 'verb':
+        obj = Verb
+    else:
+        obj = Vocab
+    subs = db.session.query(obj.id, obj.english, obj.portuguese, UserSubscription.word).outerjoin(
+        UserSubscription, (obj.id == UserSubscription.word)
+        & (UserSubscription.user_id == current_user.id)).paginate(page=page, per_page=per_page, error_out=False)
+    next_url = url_for(
+        'main.subscription', page=subs.next_num, kind=kind) if subs.has_next else None
+    prev_url = url_for(
+        'main.subscription', page=subs.prev_num, kind=kind) if subs.has_prev else None
+    return render_template('subscription.html', sub=subs.items, next_url=next_url, prev_url=prev_url, kind=kind)
+
+
+@ main.route('/subscription_manager', methods=['GET', 'POST'])
+@ login_required
+def subscription_manager():
+    word_id = request.form.get('word_id')
+    subscribed = request.form.get('subscribed') == 'true'
+    kind = request.form.get('kind')
+    if word_id == 'all':
+        if kind == 'verb':
+            obj = Verb
+        else:
+            obj = Vocab
+        for q in db.session.query(obj.id).outerjoin(UserSubscription, (obj.id == UserSubscription.word) & (UserSubscription.user_id == current_user.id)).filter(
+                UserSubscription.word.is_(None)).all():
+            sub = UserSubscription(word=q[0], kind=kind,
+                                   user_id=current_user.id)
+            db.session.add(sub)
+            db.session.commit()
+    try:
+        if subscribed:
+            sub = UserSubscription(word=word_id, kind=kind,
+                                   user_id=current_user.id)
+            db.session.add(sub)
+            db.session.commit()
+            flash('Subscription updated!')
+        else:
+            sub = db.session.query(UserSubscription).filter_by(
+                word=word_id, user_id=current_user.id).first()
+            db.session.delete(sub)
+            db.session.commit()
+            flash('Subscription deleted!')
+        return {'success': True}
+    except:
+        return {'success': False}
 
 
 @ main.route('/debug')
@@ -166,11 +226,11 @@ def debug():
     break_here
 
 
-@ main.route('/test')
-@ login_required
-def test():
-    form = TestForm()
-    return render_template('test.html', form=form)
+# @ main.route('/test')
+# @ login_required
+# def test():
+#     form = TestForm()
+#     return render_template('test.html', form=form)
 
 
 @ main.route('/show_answers/', methods=['GET', 'POST'])

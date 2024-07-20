@@ -102,8 +102,3 @@ class ResultsForm(FlaskForm):
     correct_filter = SelectField('correct', choices=[('None', 'All'), (
         'True', 'Correct'), ('False', 'Incorrect')], default='None')
     submit = SubmitField('Filter')
-
-
-class TestForm(FlaskForm):
-    question = SelectField(
-        choices=[('True', 'Correct'), ('False', 'Incorrect')])

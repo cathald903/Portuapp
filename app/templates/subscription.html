@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block content %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<div>
+    <a href="{{ url_for('main.profile')}}">My Subscriptions</a>
+    <a href="{{ url_for('main.subscription', kind = 'verb') }}">Verb Subscription</a>
+    <a href="{{ url_for('main.subscription', kind = 'vocab') }}">Vocab Subscription</a>
+</div>
+<p>subscribe to all<input type="checkbox" class="subscribe-all-checkbox" data-kind={{kind}}></p>
+<table id="data" class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>English</th>
+            <th>Portuguese</th>
+            <th>Subscribe</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in sub %}
+        <tr>
+            <td>{{ row.id }} </td>
+            <td>{{ row.english }} </td>
+            <td>{{ row.portuguese }} </td>
+            <td><input type="checkbox" class="subscribe-checkbox" data-row-id="{{ row.id }}" data-kind={{kind}} {% if
+                    row.word %}checked{% endif %}></td>
+            {% endfor %}
+    </tbody>
+</table>
+{% if prev_url %}
+<a href=" {{ prev_url }}">Previous</a>
+{% endif %}
+{% if next_url %}
+<a href="{{ next_url }}">Next</a>
+{% endif %}
+<script>
+    $(document).ready(function () {
+        $('.subscribe-checkbox').change(function () {
+            var wordId = $(this).data('row-id');
+            var subscribed = $(this).is(':checked');
+            var kind = $(this).data('kind');
+
+            $.post('/subscription_manager', {
+                word_id: wordId,
+                subscribed: subscribed,
+                kind: kind
+            }, function (response) {
+                if (response.success) {
+                    location.reload();
+                } else {
+                    console.log('Failed to update subscription.');
+                }
+            });
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $('.subscribe-all-checkbox').change(function () {
+            var kind = $(this).data('kind');
+
+            $.post('/subscription_manager', {
+                word_id: 'all',
+                kind: kind
+            }, function (response) {
+                if (response.success) {
+                    location.reload();
+                } else {
+                    console.log('Failed to subscripte to all the words.');
+                }
+            });
+        });
+    });
+</script>
+{% endblock %}

@@ -1,10 +1,31 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>{{user.username}}!</h1>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <div>
-    <p>Profile stuff<br>
-
-    </p>
+    <a href="{{ url_for('main.profile')}}">My Subscriptions</a>
+    <a href="{{ url_for('main.subscription', kind = 'verb') }}">Verb Subscription</a>
+    <a href="{{ url_for('main.subscription', kind = 'vocab') }}">Vocab Subscription</a>
 </div>
+<table id="data" class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Kind</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for sub in subs %}
+        <tr>
+            <td>{{ sub.word }} </td>
+            <td>{{ sub.kind }} </td>
+    </tbody>
+    {% endfor %}
+</table>
+{% if prev_url %}
+<a href=" {{ prev_url }}">Previous</a>
+{% endif %}
+{% if next_url %}
+<a href="{{ next_url }}">Next</a>
+{% endif %}
 {% endblock %}

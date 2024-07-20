@@ -1,4 +1,6 @@
-from app.models import Vocab, Verb
+from app import db
+from app.models import Vocab, Verb, UserSubscription
+from flask_login import current_user
 from sqlalchemy import func
 import random
 
@@ -38,10 +40,12 @@ def get_word_ending(question_dict: dict) -> str:
     return ''
 
 
-def compose_word(question_dict: dict) -> dict:
+def compose_word(question_dict: dict, kind: str) -> dict:
     """
     Chooses what gender type of the word we will ask for this word
     """
+    if kind == 'Verbs':
+        return question_dict
     ending = get_word_ending(question_dict)
     if ending:
         question_dict['english'] = f"{question_dict['english']} ({ending})"
@@ -68,11 +72,14 @@ def get_question(number: int, kind: str):
     if number == 0:
         return []
     elif kind == 'Vocab':
-        return [format_question(compose_word(q.__dict__), kind) for q in Vocab.query.order_by(
-            func.random()).limit(number)]
+        obj = Vocab
     elif kind == 'Verbs':
-        return [format_question(q.__dict__, kind) for q in Verb.query.order_by(
-            func.random()).limit(number)]
+        obj = Verb
+    query = db.session.query(obj).join(UserSubscription, (obj.id == UserSubscription.word) & (
+        UserSubscription.user_id == current_user.id)).order_by(func.random()).limit(number)
+    questions = [format_question(compose_word(
+        q.__dict__, kind), kind) for q in query]
+    return questions
 
 
 def get_questions_set(number: int, kind: str) -> str:
@@ -82,7 +89,7 @@ def get_questions_set(number: int, kind: str) -> str:
         questions = get_question(number, kind)
     else:
         random_choices = [random.choice(['vocab', 'verb'])
-                          for _ in range(number)]
+                          for _ in range(number+1)]
         questions = get_question(random_choices.count('vocab'), 'Vocab')
         questions.extend(get_question(random_choices.count('verb'), 'Verbs'))
         random.shuffle(questions)
