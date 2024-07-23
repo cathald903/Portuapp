@@ -1,13 +1,19 @@
-from app.config import current_datetime, datetime_format
+"""
+File containing the definition of all the forms used in the project
+"""
 from flask import session
 from flask_wtf import FlaskForm
-from wtforms import IntegerField, SelectField, SubmitField, StringField, PasswordField, DateTimeLocalField, RadioField, SelectMultipleField, BooleanField, FormField
+from wtforms import DateTimeLocalField, IntegerField, PasswordField, RadioField, SelectField
+from wtforms import SubmitField, StringField
 from wtforms.validators import DataRequired, InputRequired, Length, ValidationError
-
+from app.config import current_datetime, DATETIME_FORMAT
 from app.models import User
 
 
 class LoginForm(FlaskForm):
+    """
+    Simple loginform that enforces minimum name and password lengths
+    """
     username = StringField(validators=[
                            InputRequired(), Length(min=4, max=20)],
                            render_kw={"placeholder": "Username"})
@@ -20,6 +26,9 @@ class LoginForm(FlaskForm):
 
 
 class RegisterForm(FlaskForm):
+    """
+    Simple signup form that enforces minimum name and password lengths
+    """
     username = StringField(validators=[
                            InputRequired(), Length(min=4, max=20)],
                            render_kw={"placeholder": "Username"})
@@ -31,6 +40,9 @@ class RegisterForm(FlaskForm):
     submit = SubmitField('Register')
 
     def validate_username(self, username):
+        """
+        Checks to make sure that username doesn't exist already in our database
+        """
         existing_user_username = User.query.filter_by(
             username=username.data).first()
         if existing_user_username:
@@ -39,11 +51,14 @@ class RegisterForm(FlaskForm):
 
 
 class QuestionSetupForm(FlaskForm):
+    """
+    Form used to setup the number and types of questions the user wants
+    """
     num_of_questions = IntegerField('How many questions?', validators=[
                                     DataRequired()], render_kw={'autofocus': True})
-    quiz_area = SelectMultipleField('What areas?', choices=[
+    quiz_area = SelectField('What areas?', choices=[
         'Mixed', 'Verbs', 'Vocab'], validators=[DataRequired()])
-    verb_conjugation = SelectMultipleField('Test conjugation?', choices=[
+    verb_conjugation = SelectField('Test conjugation?', choices=[
         'No', 'Past', 'Present', 'Future'], validators=[DataRequired()])
     context = RadioField('Test context?', choices=[
         ('Yes', True), ('No', False)], validators=[DataRequired()])
@@ -51,6 +66,9 @@ class QuestionSetupForm(FlaskForm):
 
 
 class ConjugationForm(FlaskForm):
+    """
+    form to show the different pronouns when quizzing the user
+    """
     eu = StringField('Eu', validators=[DataRequired()],  render_kw={
         'autofocus': True})
     tu = StringField('Tu', validators=[DataRequired()],  render_kw={
@@ -68,8 +86,18 @@ class ConjugationForm(FlaskForm):
 
 
 class QuestionForm(FlaskForm):
+    """
+    This form contains the fields that will be displayed to the user
+    when they are questioned
+    """
+
     def validate_context_field(self, context):
-        if session['question_dict']['quiz_on_context'] == 'Yes' and len(context.data) == 0 and self.context_question.data:
+        """
+        Checks that the user requested to be quized on context and that the given word
+        has additional context to actually quiz the user on
+        """
+        if session['question_dict']['quiz_on_context'] == 'Yes' and (
+                len(context.data) == 0 and self.context_question.data):
             raise ValidationError('Required Field')
         else:
             return True
@@ -83,8 +111,15 @@ class QuestionForm(FlaskForm):
     submit = SubmitField('Submit Answer')
 
 
-class ResultsForm(FlaskForm):
+class FilterForm(FlaskForm):
+    """
+    Contains the fields to Filter the table on the Answer History page
+    """
+
     def time_range_validator(self, field):
+        """
+        Checks to see if the given time fields are valid, eg end date not before start date
+        """
         if not field.data or not self.date_start_filter.data:
             return True
         elif self.date_start_filter.data <= field.data:
@@ -94,9 +129,10 @@ class ResultsForm(FlaskForm):
                 'End Date must be equal to or after Start Date.')
 
     date_start_filter = DateTimeLocalField(
-        'Start Date',  default=current_datetime('datetime'), format=datetime_format)
+        'Start Date',  default=current_datetime('datetime'), format=DATETIME_FORMAT)
     date_end_filter = DateTimeLocalField(
-        'End Date', default=current_datetime('datetime'), validators=[time_range_validator], format=datetime_format)
+        'End Date', default=current_datetime('datetime'),
+        validators=[time_range_validator], format=DATETIME_FORMAT)
     word_filter = SelectField(
         'word', choices=['All'], default='All')
     correct_filter = SelectField('correct', choices=[('None', 'All'), (

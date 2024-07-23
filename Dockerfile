@@ -7,6 +7,7 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     default-libmysqlclient-dev \
     build-essential \
+    pkg-config \
     && rm -rf /var/lib/apt/lists/*
 
 RUN --mount=type=cache,target=/root/.cache/pip \
@@ -17,8 +18,9 @@ COPY . .
 
 EXPOSE 8000
 ENV PYTHONPATH=/app
-ENV FLASK_APP='/app/csvs/rest_app.py'
-ENV VERB_FILE='/app/csvs/Verbs.csv'
-ENV VOCAB_FILE='/app/csvs/Vocab.csv'
-ENV ANSWER_FILE='/app/csvs/Answers.csv'
-ENV USERSUB_FILE='/app/csvs/UserSubscriptions.csv'
+ENV FLASK_APP='app/csvs/rest_app.py'
+ENV VERB_FILE='app/csvs/Verbs.csv'
+ENV VOCAB_FILE='app/csvs/Vocab.csv'
+ENV ANSWER_FILE='app/csvs/Answers.csv'
+ENV USERSUB_FILE='app/csvs/UserSubscriptions.csv'
+ENV ENVIRONMENT='Test'

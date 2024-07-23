@@ -1,8 +1,11 @@
-from app import db
-from app.models import Vocab, Verb, UserSubscription
+"""
+Contains the logic for deriving questions for the user
+"""
+import random
 from flask_login import current_user
 from sqlalchemy import func
-import random
+from app import db
+from app.models import Verb, Vocab, UserSubscription
 
 
 def format_question(row_dict: dict, kind: str) -> None:
@@ -11,17 +14,17 @@ def format_question(row_dict: dict, kind: str) -> None:
     """
     langs = ['Portuguese', 'English']
     random.shuffle(langs)
-    translate_to, translate_from = langs
+    trans_to, trans_from = langs
     context = row_dict.get('context', '')
-    if translate_from == 'English' and context:
+    if trans_from == 'English' and context:
         question_context = f"({context})"
     else:
         question_context = ''
     question_dict = {
-        "question": f"What is the {translate_to} of {row_dict[translate_from.lower()]}{question_context}?",
-        "answer": row_dict[translate_to.lower()].split(' (')[0],
+        "question": f"What is the {trans_to} of {row_dict[trans_from.lower()]}{question_context}?",
+        "answer": row_dict[trans_to.lower()].split(' (')[0],
         "id": row_dict['id']}
-    if translate_to == 'English' and context:
+    if trans_to == 'English' and context:
         question_dict['context_question'] = "In what context?"
         question_dict['context_answer'] = context
     question_dict['kind'] = kind
@@ -30,6 +33,9 @@ def format_question(row_dict: dict, kind: str) -> None:
 
 
 def get_word_ending(question_dict: dict) -> str:
+    """
+    Checks what endings are available for the word and chooses 1 to append
+    """
     m, f = question_dict['masculine'], question_dict['feminine']
     if m and f:
         return random.choice(['masculine', 'feminine'])
@@ -42,7 +48,7 @@ def get_word_ending(question_dict: dict) -> str:
 
 def compose_word(question_dict: dict, kind: str) -> dict:
     """
-    Chooses what gender type of the word we will ask for this word
+    Chooses what the of the word gender will be asked
     """
     if kind == 'Verbs':
         return question_dict
@@ -53,22 +59,10 @@ def compose_word(question_dict: dict, kind: str) -> dict:
     return question_dict
 
 
-# def get_vocab_question(number: int):
-#     if number == 0:
-#         return []
-#     questions = [compose_word(q.__dict__) for q in Vocab.query.order_by(
-#         func.random()).limit(number)]
-#     return [format_question(q) for q in questions]
-
-
-# def get_verb_question(number: int):
-#     if number == 0:
-#         return []
-#     return [format_question(q.__dict__) for q in Verb.query.order_by(
-#         func.random()).limit(number)]
-
-
 def get_question(number: int, kind: str):
+    """
+    Returns the requested number of questions from the database depending on the user's request
+    """
     if number == 0:
         return []
     elif kind == 'Vocab':
@@ -83,18 +77,17 @@ def get_question(number: int, kind: str):
 
 
 def get_questions_set(number: int, kind: str) -> str:
+    """
+    Returns a random shuffle of the requested number of questions by type
+    """
     if kind == 'Vocab':
         questions = get_question(number, kind)
     elif kind == 'Verbs':
         questions = get_question(number, kind)
     else:
         random_choices = [random.choice(['vocab', 'verb'])
-                          for _ in range(number+1)]
+                          for _ in range(number)]
         questions = get_question(random_choices.count('vocab'), 'Vocab')
         questions.extend(get_question(random_choices.count('verb'), 'Verbs'))
         random.shuffle(questions)
     return questions
-
-
-def get_questions(number: int, kind: str = 'mixed') -> str:
-    return get_questions_set(number, kind)

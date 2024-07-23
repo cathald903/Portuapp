@@ -9,4 +9,4 @@ pymysql
 psycopg2-binary
 pytz
 pyyaml
-mysqlclient==2.1.1
+mysqlclient

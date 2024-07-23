@@ -37,13 +37,13 @@
 <script>
     $(document).ready(function () {
         $('.subscribe-checkbox').change(function () {
-            var wordId = $(this).data('row-id');
-            var subscribed = $(this).is(':checked');
+            var word_id = $(this).data('row-id');
+            var to_subscribe = $(this).is(':checked');
             var kind = $(this).data('kind');
 
             $.post('/subscription_manager', {
-                word_id: wordId,
-                subscribed: subscribed,
+                word_id: word_id,
+                to_subscribe: to_subscribe,
                 kind: kind
             }, function (response) {
                 if (response.success) {
@@ -67,7 +67,7 @@
                 if (response.success) {
                     location.reload();
                 } else {
-                    console.log('Failed to subscripte to all the words.');
+                    console.log('Failed to subscribe to all the words.');
                 }
             });
         });

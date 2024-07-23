@@ -1,65 +1,81 @@
 """
-Connects to the db for import into the other modules
+Contains the functions for saving the data to the DB and
+Csv load/save functions for local development purposes
 """
 import csv
+import os
 from flask import session
 from flask_login import current_user
-import os
-from app import db, bcrypt
-from app.models import Answers
+from sqlalchemy import exc
+from app import db
+from app.models import Answers, UserSubscription, User, Verb, Vocab
 
 
 def get_csv_file(name) -> list:
-    with open(name, newline='') as csvfile:
+    """
+    Simple csv loader that returns the given file as a list
+    """
+    with open(name, newline='', encoding='utf-8') as csvfile:
         reader = csv.reader(csvfile)
         next(reader)
         return [row for row in reader]
 
 
-def import_from_csv(file: str, obj: object):
-    data = get_csv_file(file)
-    # try except so we skip over primary key duplicate error when the container hasn't been cleared
-    for row in data:
-        try:
-            db.session.add(obj(row, True))
-            db.session.commit()
-        except Exception as e:
-            db.session.rollback()
-            print(e)
-
-
-def save_answer_to_database(user_id, question_id, datetime_id, question, correct_answer, user_answer, correct_context, user_context, user_conjugation):
-    answer_obj = Answers([user_id, question_id, datetime_id, question,
-                         correct_answer, user_answer, correct_context, user_context, user_conjugation])
-    db.session.add(answer_obj)
-    db.session.commit()
-    return answer_obj
-
-
-def save_answer_to_csv(answer_id, user_id, question_id, date, question, given_answer, correct, context_answer, context_correct, user_conjugation):
+def commit_to_database(data: object):
+    """
+    Commits to database, rollbacks if there is an IntegrityError
+    """
     try:
-        append_to_csv(os.getenv('ANSWER_FILE'), (answer_id, user_id, question_id, date,
-                                                 question, given_answer, correct, context_answer, context_correct, user_conjugation))
-    except:
-        print(f"unable to write row to {os.getenv('ANSWER_FILE')}")
+        db.session.add(data)
+        db.session.commit()
+    except exc.IntegrityError:
+        db.session.rollback()
+
+
+def import_from_csv(file: str, obj: object):
+    """
+    Function used for local development to import data into the db
+    """
+    data = get_csv_file(file)
+    for row in data:
+        commit_to_database(obj(row))
+
+
+def format_answer(datetime_id, question, user_answer, user_context, user_conjugation):
+    """
+    Formats the fields into the order/values expected by the Answers Model
+    """
+    user_object = User.query.filter_by(id=current_user.id).first()
+    id_ = "_".join([user_object.username, datetime_id, question['id']])
+    correct = str(question['answer'].lower() == user_answer.lower())
+    context = question.get('context_answer', 'n/a')
+    context_correct = str(context.lower() == user_context.lower())
+    conjugation_correct = user_conjugation
+    return [id_, current_user.id, question['id'], datetime_id, question['question'],
+            user_answer, correct, context, context_correct, conjugation_correct]
 
 
 def save_answer(user_answer, user_context, user_conjugation):
+    """
+    Retrieves session data to get the necessary fields for saving it
+    to csv and to the database
+    """
     question_dict = session['question_dict']
     question = question_dict['question_set'][question_dict['number']]
     datetime_id = question_dict['datetime_id']
-    correct_answer = question['answer'].lower()
-    correct_context = question.get('context_answer', 'n/a')
-    answer_obj = save_answer_to_database(current_user.id,
-                                         question['id'], datetime_id, question['question'],
-                                         correct_answer, user_answer,
-                                         correct_context, user_context, user_conjugation)
-    save_answer_to_csv(answer_obj.id, current_user.id, question['id'], datetime_id,
-                       question['question'], user_answer, answer_obj.correct,
-                       correct_context, answer_obj.context_correct, user_conjugation)
+
+    data = format_answer(datetime_id, question, user_answer,
+                         user_context, user_conjugation)
+    answer_obj = Answers(data)
+    commit_to_database(answer_obj)
+    append_to_csv(os.getenv('ANSWER_FILE'),
+                  data)
 
 
 def append_to_csv(filename, data):
+    """
+    Writes the given data to a newline in the given file
+    """
     with open(filename, 'a', newline='', encoding="utf-8") as csvfile:
         writer = csv.writer(csvfile, delimiter=',',
                             quotechar='|', quoting=csv.QUOTE_MINIMAL)
@@ -67,16 +83,13 @@ def append_to_csv(filename, data):
 
 
 def init_db():
-    from app.models import Vocab, Verb, Answers, User, UserSubscription
-    if os.environ.get("WERKZEUG_RUN_MAIN") != "true":
-        db.create_all()
+    """
+    Creates the databases's tables if they don't already exist and when running in the test
+    environment will populate them with data from the given csvs.
+    """
+    db.create_all()
+    if os.getenv('ENVIRONMENT') == 'Test':
         import_from_csv(os.getenv('VOCAB_FILE'), Vocab)
         import_from_csv(os.getenv('VERB_FILE'), Verb)
-        ##### just because of testing and constant wiping of user data #####
-        if len(User.query.filter_by(username='Cathal').all()) == 0:
-            hashed_password = bcrypt.generate_password_hash('12341234')
-            new_user = User(username='Cathal', password=hashed_password)
-            db.session.add(new_user)
-            db.session.commit()
         import_from_csv(os.getenv('ANSWER_FILE'), Answers)
         import_from_csv(os.getenv('USERSUB_FILE'), UserSubscription)

@@ -151,7 +151,7 @@ Cathal_2024-07-17T12:08:09_to_be_ser,1,to_be_ser,2024-07-17T12:08:09,What is the
 Cathal_2024-07-17T12:08:09_to_know_conhecer,1,to_know_conhecer,2024-07-17T12:08:09,What is the Portuguese of To Know(person/place)?,cohencer,False,n/a,True,True
 Cathal_2024-07-17T12:08:09_to_play_jogar,1,to_play_jogar,2024-07-17T12:08:09,What is the English of Jogar?,to play,True,n/a,True,True
 Cathal_2024-07-17T12:08:09_to_be_estar,1,to_be_estar,2024-07-17T12:08:09,What is the Portuguese of To Be(moods/situations)?,estar,True,n/a,True,True
-Cathal_2024-07-17T12:33:35_to_happen_acontecer,1,to_happen_acontecer,2024-07-17T12:33:35,What is the English of Acontecer?,to learn,False,n/a,TrueTrue
+Cathal_2024-07-17T12:33:35_to_happen_acontecer,1,to_happen_acontecer,2024-07-17T12:33:35,What is the English of Acontecer?,to learn,False,n/a,True,True
 Cathal_2024-07-17T12:35:57_to_say/tell_dizer,1,to_say/tell_dizer,2024-07-17T12:35:57,What is the Portuguese of To Say/Tell?,dizer,True,n/a,True,True
 Cathal_2024-07-17T12:36:14_to_love_adorar,1,to_love_adorar,2024-07-17T12:36:14,What is the Portuguese of To Love?,amorar,False,n/a,True,True
 Cathal_2024-07-17T12:36:14_to_have_drink/food_tomar,1,to_have_drink/food_tomar,2024-07-17T12:36:14,What is the English of Tomar?,to eat/drink,False,n/a,True,True
@@ -227,3 +227,22 @@ Cathal_2024-07-20T17:54:59_to_arrive_chegar,1,to_arrive_chegar,2024-07-20T17:54:
 Cathal_2024-07-20T17:54:59_book_livro,1,book_livro,2024-07-20T17:54:59,What is the English of Livro?,book,True,n/a,True,True
 Cathal_2024-07-20T17:55:54_to_arrive_chegar,1,to_arrive_chegar,2024-07-20T17:55:54,What is the Portuguese of To Arrive?,chegar,True,n/a,True,True
 Cathal_2024-07-20T17:55:54_angry_zangad,1,angry_zangad,2024-07-20T17:55:54,What is the Portuguese of Angry (masculine)?,zangado,True,n/a,True,True
+Cathal_2024-07-22T15:02:02_to_speak_falar,1,to_speak_falar,2024-07-22T15:02:02,What is the English of Falar?,to speak,True,n/a,True,True
+Cathal_2024-07-22T15:02:02_to_do/make_fazer,1,to_do/make_fazer,2024-07-22T15:02:02,What is the Portuguese of To Do/Make?,fazer,True,n/a,True,True
+Cathal_2024-07-22T15:02:02_dinner_jantar,1,dinner_jantar,2024-07-22T15:02:02,What is the English of Jantar?,to sing,False,n/a,True,True
+Cathal_2024-07-22T15:02:02_snow_neve,1,snow_neve,2024-07-22T15:02:02,What is the English of Neve?,snow,True,n/a,True,True
+Cathal_2024-07-22T15:22:32_to_cook_cozinhar,1,to_cook_cozinhar,2024-07-22T15:22:32,What is the Portuguese of To Cook?,cozinhar,True,n/a,True,True
+Cathal_2024-07-22T15:22:32_snack_lanche,1,snack_lanche,2024-07-22T15:22:32,What is the Portuguese of Snack?,snacko,False,n/a,True,True
+Cathal_2024-07-22T15:23:19_to_read_ler,1,to_read_ler,2024-07-22T15:23:19,What is the Portuguese of To Read?,ler,True,n/a,True,True
+Cathal_2024-07-22T15:23:55_to_work_trabalhar,1,to_work_trabalhar,2024-07-22T15:23:55,What is the Portuguese of To Work?,trabalhar,True,n/a,True,True
+Cathal_2024-07-22T15:24:39_to_put_pôr,1,to_put_pôr,2024-07-22T15:24:39,What is the Portuguese of To Put?,poder,False,n/a,True,True
+Cathal_2024-07-22T15:25:23_book_livro,1,book_livro,2024-07-22T15:25:23,What is the English of Livro?,book,True,n/a,True,True
+Cathal_2024-07-22T17:17:23_to_cook_cozinhar,1,to_cook_cozinhar,2024-07-22T17:17:23,What is the Portuguese of To Cook?,cozinhar,True,n/a,True,True
+Cathal_2024-07-23T15:02:42_to_work_trabalhar,1,to_work_trabalhar,2024-07-23T15:02:42,What is the English of Trabalhar?,to work,True,n/a,True,True
+Cathal_2024-07-23T15:09:43_to_participate_participar,1,to_participate_participar,2024-07-23T15:09:43,What is the Portuguese of To Participate(in)?,participar,True,n/a,True,True
+Cathal_2024-07-23T15:24:31_to_choose_escolher,1,to_choose_escolher,2024-07-23T15:24:31,What is the English of Escolher?,to choose,True,n/a,True,True
+Cathal_2024-07-23T15:24:31_to_dance_dançar,1,to_dance_dançar,2024-07-23T15:24:31,What is the English of Dançar?,to dance,True,n/a,True,True
+Cathal_2024-07-23T15:24:47_cold_frio,1,cold_frio,2024-07-23T15:24:47,What is the Portuguese of Cold?,frio,True,n/a,True,True
+Cathal_2024-07-23T15:24:47_uncles/aunts_tios,1,uncles/aunts_tios,2024-07-23T15:24:47,What is the Portuguese of Uncles/Aunts?,tios,True,n/a,True,True
+Cathal_2024-07-23T15:24:47_windy_vento,1,windy_vento,2024-07-23T15:24:47,What is the Portuguese of Windy?,windo,False,n/a,True,True
+Cathal_2024-07-23T15:24:47_interested_interessad,1,interested_interessad,2024-07-23T15:24:47,What is the Portuguese of Interested (masculine)?,uhh,False,n/a,True,True
